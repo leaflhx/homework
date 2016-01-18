@@ -1,0 +1,62 @@
+<!-- code by Leaf -->    	
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="description" content="网页描述" />
+    <meta name="Keywords" content="关键字" />
+    <title></title>
+<style>
+*{margin:0; padding:0;}
+.box{width:700px; height:400px; margin:100px auto; position:relative; top:0; left:0;}
+.box span{ position:absolute; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateY(0deg);}
+.box span em{position:absolute; top:0;left:0; width:100%; height:100%;}
+.box span .front{-webkit-transform:translateZ(1px); background:url(img/1.jpg) no-repeat;}
+.box span .back{-webkit-transform:translateZ(-1px) scale(-1,1); background:url(img/2.jpg) no-repeat;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oBtn = document.getElementsByTagName('input')[0];
+		var oBox = document.querySelector('.box');
+		var Row = 4;
+		var Cos = 7;
+		for(var i=0;i<Row;i++){
+			for(var j=0;j<Cos;j++){
+				var oSpan = document.createElement('span');
+				oSpan.innerHTML='<em class="front"></em><em class="back"></em>';
+				oSpan.style.width = oBox.offsetWidth/Cos+'px';
+				oSpan.style.height = oBox.offsetHeight/Row+'px';
+				oBox.appendChild(oSpan);
+				oSpan.style.left = j*oSpan.offsetWidth+'px';
+				oSpan.style.top = i*oSpan.offsetHeight+'px';
+				var oFront = oSpan.children[0];
+				var oBack = oSpan.children[1];
+				oFront.style.backgroundPosition=-j*oSpan.offsetWidth+'px '+-i*oSpan.offsetHeight+'px';
+				oBack.style.backgroundPosition=-j*oSpan.offsetWidth+'px '+-i*oSpan.offsetHeight+'px';
+				oSpan.r = i;
+				oSpan.c = j;
+				console.log(oSpan.r,oSpan.c )
+			}
+		}
+		var aS = oBox.children;
+		oBtn.onclick=function(){
+			for(var i=0;i<aS.length;i++){
+				(function(index){
+					setTimeout(function(){
+						aS[index].style.WebkitTransition='1s all ease';
+						aS[index].style.WebkitTransform='perspective(800px) rotateY(180deg)';
+					},(aS[i].c+aS[i].r)*100);
+				})(i);
+			}
+		};
+
+
+	};
+</script>
+</head>
+   
+<body>
+<input type="button" value="按钮" />
+<div class="box"></div>
+</body>
+</html>
