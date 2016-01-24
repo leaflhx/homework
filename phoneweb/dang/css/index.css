@@ -1,0 +1,97 @@
+*{ margin:0; padding:0; list-style:none; text-decoration:none; }
+html{ font-size:100px; }
+.clearFix:after{ display:block; content:''; clear:both; }
+.fl{ float:left; }
+.fr{ float:right; }
+.box{ width:100%; background:#f0f0f0; font-size:0.18rem; }
+header{ width:100%; height:0.43rem; }
+h1{ text-indent:-9999999px; background:url(../images/logo.png) no-repeat; width:0.81rem; height:0.23rem; background-size:100%; margin:0.1rem 0 0 0.1rem; }
+header ul{ margin:0.1rem 0.11rem 0 0; }
+header ul li{ float:left; height:0.23rem; margin:0 0.055rem; }
+header ul li a{ height:0.23rem; }
+header ul li img{ height:0.23rem; }
+.banner{ width:100%; height:1.25rem; position:relative; top:0; left:0; overflow:hidden; }
+.banner ul{ width:19.2rem;display:-webkit-flex; display:flex; -webkit-transform:translateX(0rem); transform:translateX(0rem); }
+.banner ul li{ flex:1; -webkit-flex:1; }
+.banner img{  width:3.2rem; height:1.25rem; }
+.banner ol{ position:absolute; bottom:0.07rem; left:50%; width:0.9rem; margin-left:-0.45rem; display:flex; display:-webkit-flex; }
+.banner ol li{ width:0.05rem; height:0.05rem; background:#fff; border-radius:50%; margin:0 0.05rem; flex:1; -webkit-flex:1; text-indent:-999999px; }
+.banner ol li.active{ background:#333; }
+.search .download{ width:3.04rem; height:0.295rem; background:#fbb347; position:relative; top:0; left:0; margin:0.1rem auto; text-align:center; font-size:0.14rem; line-height:0.295rem; color:#fff; }
+.search .download i{ position:absolute; top:0.06rem; left:0.08rem; background:url(../images/horn.png) no-repeat; width:0.225rem; height:0.17rem; background-size:100%; }
+.searchbox{ width:3rem; margin:0 auto; position:relative; top:0; left:0; }
+.searchbox .text{ width:2.255rem; padding-left:0.125rem; height:0.38rem; line-height:0.38rem; border:0.01rem solid #ec9432; font-size:0.13rem; color:#a7a7a7; box-shadow:inset 0 0.015rem 0.05rem #ccc; }
+.searchbox .seabtn{ width:0.6rem; height:0.4rem; background:#fe9600; }
+.searchbox i{ position:absolute; top:0.09rem; right:0.18rem; width:0.24rem; height:0.24rem; background:url(../images/magnifier.png) no-repeat; background-size:100%; }
+.search .list ul{ width:2.25rem; margin:0.1rem auto 0.2rem; font-size:0.14rem; color:#7d7d7d; }
+.search .list ul li{ width:0.45rem; height:0.35rem; line-height:0.35rem; text-align:center; float:left; }
+.mine ul{ width:3.12rem; margin:0 auto 0.3rem; display:-webkit-flex; display:flex; }
+.mine ul li{ flex:1; -webkit-flex:1; font-size:0.12rem; color:#6b6b6b; text-align:center; margin:0 0.09rem; }
+.mine ul li section{ width:0.6rem; height:0.6rem; background:#fff; border:0.01rem solid #c3c3c3; box-sizing:border-box; border-radius:0.03rem; margin-bottom:0.06rem; }
+.mine ul li a span{ color:#6b6b6b; }
+.mine ul li .order img{ width:0.315rem; height:0.335rem; margin-top:0.12rem; }
+.mine ul li .discount img{ width:0.35rem; height:0.27rem; margin-top:0.155rem; }
+.mine ul li .people img{ width:0.26rem; height:0.32rem; margin-top:0.13rem; }
+.mine ul li .history img{ width:0.32rem; height:0.325rem; margin-top:0.135rem; }
+.color_line .top{ width:100%; height:0.31rem; background:#fe9600; color:#fff; }
+.color_line .top h2{ font-size:0.15rem; margin:0 0.1rem; font-weight:normal; line-height:0.31rem; }
+.color_line .top p{ font-size:0.12rem; margin-top:0.08rem; }
+.color_line .top i{ background:url(../images/arrow.png) no-repeat; width:0.055rem; height:0.1rem; background-size:100%; margin-right:0.12rem; margin-top:0.115rem; }
+.cheap .products{ width:3.1rem; margin:0.1rem auto; display:flex; display:-webkit-flex; }
+.cheap .products li{ width:1.45rem; height:1.45rem; position:relative; top:0; left:0;  margin:0 0.05rem; flex:1; -webkit-flex:1; }
+.cheap .products li .pos{ width:100%; height:0.4rem; position:absolute; bottom:0; left:0; background:rgba(0,0,0,0.4); }
+.cheap .products li img{ width:1.45rem; height:1.45rem; }
+.cheap .products li .pos h3{ font-size:0.12rem; color:#fff; font-family:"Microsoft YaHei"; margin:0.07rem 0 0 0.07rem; line-height:0.14rem; }
+.cheap .products li .pos p{ font-size:0.11rem; color:#df5b66; margin-left:0.07rem; }
+.cheap .products li .pos p span{ color:#f2c58a; margin-left:0.14rem; }
+.textlist{ width:3.04rem; margin:0 auto; font-size:0.15rem; font-family:"Microsoft YaHei"; }
+.textlist li{ width:2.84rem; padding:0 0.1rem; border-top:0.01rem solid #fbfbfb; border-bottom:0.01rem solid #e7e7e7; height:0.36rem; line-height:0.36rem; }
+.textlist li a{ color:#727272; }
+.textlist li a b{ color:#c00000; font-size:0.14rem;  }
+.textlist:before{ content:''; display:block; width:100%; height:0.01rem; background:#e7e7e7; }
+.textlist:after{ content:''; display:block; width:100%; height:0.01rem; background:#fbfbfb; }
+.sale .top{ width:100%; background:#e50055; margin-top:0.1rem; }
+.propic li{ width:100%; height:1.4rem; position:relative; top:0; left:0; }
+.propic li img{ width:3.2rem; height:1.4rem; }
+.propic li .pos{ position:absolute; bottom:0; left:0; background:rgba(0,0,0,.4); width:100%; height:0.3rem; }
+.propic li .pos i{ width:0.8rem; height:0.3rem; background:url(../images/basic.png) no-repeat; background-size:100%; }
+.propic li .pos h2{ margin-left:0.1rem; width:0.8rem; height:0.3rem; font-size:0.12rem; color:#fff; line-height:0.3rem;}
+.propic li .pos p{ font-size:0.1rem; color:#fff; line-height:0.3rem;}
+.propic li .gxg i{ width:0.8rem; height:0.3rem; background:url(../images/gxg.png) no-repeat; background-size:100%; }
+.propic li .victop i{ width:0.8rem; height:0.3rem; background:url(../images/victop.png) no-repeat; background-size:100%; }
+.btnlist{ text-align:center; line-height:0.28rem; width:3.06rem; height:0.79rem; margin:0 auto 0.2rem; font-size:0.14rem; }
+.btnlist li{ width:0.92rem; height:0.28rem; float:left; background:#fff; border-radius:0.03rem; margin:0.1rem 0.05rem 0; }
+.btnlist li a{ color:#6a6a6a; }
+.sale .textlist li a b{ color:#eca026; }
+.iconlist{ margin:0.25rem 0; }
+.iconlist ul{ width:3.12rem; margin:0 auto 0.3rem; display:-webkit-flex; display:flex; }
+.iconlist ul li{ flex:1; -webkit-flex:1; font-size:0.12rem; color:#6b6b6b; text-align:center; margin:0 0.09rem; }
+.iconlist ul li section{ width:0.6rem; height:0.6rem; background:#fff; border:0.01rem solid #c3c3c3; box-sizing:border-box; border-radius:0.03rem; margin-bottom:0.06rem; }
+.iconlist ul li a span{ color:#6b6b6b; }
+.iconlist ul li .phone img{ width:0.19rem; height:0.335rem; margin-top:0.115rem; }
+.iconlist ul li .gold img{ width:0.39rem; height:0.255rem; margin-top:0.15rem; }
+.iconlist ul li .dang img{ width:0.28rem; height:0.215rem; margin-top:0.145rem; }
+.iconlist ul li .book img{ width:0.35rem; height:0.285rem; margin-top:0.135rem; }
+.searchpro{ background:#e0e0e0; padding:0.1rem 0 0.25rem;}
+.searchpro .searchbox{ width:3rem; margin:0 auto; position:relative; top:0; left:0; }
+.searchpro .searchbox .text{ width:2.255rem; padding-left:0.125rem; height:0.38rem; line-height:0.38rem; border:0.01rem solid #adadad; font-size:0.13rem; color:#a7a7a7; box-shadow:inset 0 0.015rem 0.05rem #ccc; }
+.searchpro .searchbox .seabtn{ width:0.6rem; height:0.4rem; background:#b0b0b0; }
+.searchpro .searchbox i{ position:absolute; top:0.09rem; right:0.18rem; width:0.24rem; height:0.24rem; background:url(../images/magnifier.png) no-repeat; background-size:100%; }
+.searchpro .list ul{ width:1.83rem; margin:0.1rem auto 0; font-size:0.15rem; color:#212121; }
+.searchpro .list ul li{ width:0.61rem; height:0.35rem; line-height:0.35rem; text-align:center; float:left; }
+footer{ width:100%; height:0.7rem; background:#e0e0e0; text-align:center; font-size:0.11rem; color:#b0b0b0; }
+footer section{ width:100%; height:0.3rem; line-height:0.3rem; background:#b0b0b0; font-size:0.15rem; margin-bottom:0.15rem; }
+.login{ margin:0 0.2rem 0 0.15rem; }
+footer section .top{ margin-right:0.1rem;}
+footer section i{ background:url(../images/top.png) no-repeat center; margin-left:1.75rem; background-size:100%; width:0.105rem; height:0.3rem; }
+footer section a{ color:#fff; }
+ 
+
+
+
+
+
+
+
+
+

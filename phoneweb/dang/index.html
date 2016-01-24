@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>当当网</title>
+<link href="css/index.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<script>
+var rem=100;
+window.onload=function()
+{
+	rem=document.documentElement.clientWidth*0.3125;
+	document.documentElement.style.fontSize=rem+'px';
+	var oUl=document.querySelector('.banner ul');
+	var aLi=oUl.children; 
+	var aBanBtn=document.querySelectorAll('.banner ol li');
+	var x=0;
+	oUl.addEventListener('touchstart',function(ev){
+		var disX=ev.targetTouches[0].pageX/rem-x;
+		function fnMove(ev)
+		{
+			x=ev.targetTouches[0].pageX/rem-disX;
+			oUl.style.WebkitTransform='translateX('+x+'rem)';
+
+		}
+		function fnEnd()
+		{
+			oUl.removeEventListener('touchmove',fnMove,false);
+			oUl.removeEventListener('touchend',fnEnd,false);
+			var w=aLi[0].offsetWidth/rem;
+			var n=Math.round(-x/w);
+			oUl.style.WebkitTransition='0.5s all ease';
+			if(n<0)
+			{
+				n=0;
+			}
+			else if(n==aLi.length)
+			{
+				n=aLi.length-1;
+			}
+			x=-n*w;
+			for(var i=0;i<aBanBtn.length;i++)
+			{
+				aBanBtn[i].className='';
+			}
+			aBanBtn[n].className='active';
+			oUl.style.WebkitTransform='translateX('+x+'rem)';
+		}
+		oUl.addEventListener('touchmove',fnMove,false);
+		oUl.addEventListener('touchend',fnEnd,false);
+		ev.preventDefault();
+	},false);
+
+
+
+	window.onresize=function()
+	{
+		rem=document.documentElement.clientWidth*0.3125;
+		document.documentElement.style.fontSize=rem+'px';
+	};
+};
+</script>
+</head>
+
+<body>
+<div class="box">
+	<header class="clearFix">
+		<h1 class="fl">当当网</h1>
+		<ul class="fr clearFix">
+			<li>
+				<a href="javascript:;">
+					<img src="images/icon.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/icon1.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/icon2.jpg" alt="" />
+				</a>
+			</li>
+		</ul>
+	</header>
+	<section class="banner">
+		<ul>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner1.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner2.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner3.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner4.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner5.jpg" alt="" />
+				</a>
+			</li>
+		</ul>
+		<ol>
+			<li class="active">0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+	</section>
+	<section class="search">
+		<section class="download"><i></i>下载当当手机客户端即得5元现金券</section>
+		<section class="searchbox clearFix">
+			<section class="text fl">尾品汇</section>
+			<section class="seabtn fl"></section>
+			<i></i>
+		</section>
+		<section class="list">
+			<ul class="clearFix">
+				<li><a href="javascript:;"></a>图书</li>
+				<li><a href="javascript:;"></a>母婴</li>
+				<li><a href="javascript:;"></a>童装</li>
+				<li><a href="javascript:;"></a>美妆</li>
+				<li><a href="javascript:;"></a>家居</li>
+				<li><a href="javascript:;"></a>服装</li>
+				<li><a href="javascript:;"></a>鞋靴</li>
+				<li><a href="javascript:;"></a>箱包</li>
+				<li><a href="javascript:;"></a>运动</li>
+				<li><a href="javascript:;"></a>更多</li>
+			</ul>
+		</section>
+	</section>
+	<section class="mine">
+		<ul>
+			<li>
+				<a href="javacript:;">
+					<section class="order">
+						<img src="images/order.png" alt="" />
+					</section>
+					<span>我的订单</span>
+				</a>
+			</li>
+			<li>
+				<a href="javacript:;">
+					<section class="discount">
+						<img src="images/discount.png" alt="" />
+					</section>
+					<span>我的优惠</span>
+				</a>
+			</li>
+			<li>
+				<a href="javacript:;">
+					<section class="people">
+						<img src="images/people.png" alt="" />
+					</section>
+					<span>口袋客服</span>
+				</a>
+			</li>
+			<li>
+				<a href="javacript:;">
+					<section class="history">
+						<img src="images/history.png" alt="" />
+					</section>
+					<span>浏览历史</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="cheap color_line">
+		<section class="top clearFix">
+			<h2 class="fl">今日闪价</h2>
+			<p class="fl">挑战全网最低价</p>
+			<i class="fr"></i>
+		</section>
+		<ul class="products">
+			<li>
+				<a href="javascript:;">
+					<img src="images/1.jpg" alt="" />
+				</a>
+				<section class="pos">
+					<h3>欣怡幽香沐浴露</h3>
+					<p>&yen;39.90<span>7.1折</span></p>
+				</section>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/2.jpg" alt="" />
+					<section class="pos">
+						<h3>恬静清香沐浴露</h3>
+						<p>&yen;53.00<span>9.5折</span></p>
+					</section>
+				</a>
+			</li>
+		</ul>
+		<ul class="textlist">
+			<li>
+				<a class="clearFix" href="javascript:;">
+					<span class="fl">桌面迷你小太阳取暖器2档调</span>
+					<b class="fr">&yen;29.00</b>
+				</a>
+			</li>
+			<li>
+				<a class="clearFix" href="javascript:;">
+					<span class="fl">LOCK&LOCK乐扣  普通型套</span>
+					<b class="fr">&yen;69.90</b>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="sale color_line">
+		<section class="top clearFix">
+			<h2 class="fl">尾品汇1-3折</h2>
+			<p class="fl">名品清仓特卖</p>
+			<i class="fr"></i>
+		</section>
+		<ul class="propic">
+			<li>
+				<a href="javascript:;">
+					<img src="images/3.jpg" alt="" />
+				</a>
+				<section class="pos clearFix">
+					<i class="fl"></i>
+					<h2 class="fl">全场1～3.9折</h2>
+					<p class="fl">简约品味	舒适自如</p>
+				</section>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/4.jpg" alt="" />
+				</a>
+				<section class="pos clearFix gxg">
+					<i class="fl"></i>
+					<h2 class="fl">2.5—3.9折</h2>
+					<p class="fl">绅士贵族时尚男装</p>
+				</section>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/5.jpg" alt="" />
+				</a>
+				<section class="pos clearFix victop">
+					<i class="fl"></i>
+					<h2 class="fl">1—3.9折</h2>
+					<p class="fl">瑞士军刀	尾品汇大促</p>
+				</section>
+			</li>
+		</ul>
+		<ul class="btnlist">
+			<li>
+				<a href="javascript:;">男装</a>
+			</li>
+			<li>
+				<a href="javascript:;">女装</a>
+			</li>
+			<li>
+				<a href="javascript:;">鞋</a>
+			</li>
+			<li>
+				<a href="javascript:;">运动户外</a>
+			</li>
+			<li>
+				<a href="javascript:;">箱包礼品</a>
+			</li>
+		</ul>
+		<ul class="textlist">
+			<li>
+				<a class="clearFix" href="javascript:;">
+					<span class="fl">笛莎童装 每个女孩都是公主</span>
+					<b class="fr">2.0折</b>
+				</a>
+			</li>
+			<li>
+				<a class="clearFix" href="javascript:;">
+					<span class="fl">亚都净化专场 全国包邮49折</span>
+					<b class="fr">3.0折</b>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="iconlist">
+		<ul>
+			<li>
+				<a href="javacript:;">
+					<section class="phone">
+						<img src="images/phone.png" alt="" />
+					</section>
+					<span>手机充值</span>
+				</a>
+			</li>
+			<li>
+				<a href="javacript:;">
+					<section class="gold">
+						<img src="images/gold.png" alt="" />
+					</section>
+					<span>元宝福利社</span>
+				</a>
+			</li>
+			<li>
+				<a href="javacript:;">
+					<section class="dang">
+						<img src="images/dang.png" alt="" />
+					</section>
+					<span>当当客户端</span>
+				</a>
+			</li>
+			<li>
+				<a href="javacript:;">
+					<section class="book">
+						<img src="images/book.png" alt="" />
+					</section>
+					<span>读书客户端</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="searchpro">
+		<section class="searchbox clearFix">
+			<section class="text fl">请输入商品名称</section>
+			<section class="seabtn fl"></section>
+			<i></i>
+		</section>
+		<section class="list">
+			<ul class="clearFix">
+				<li><a href="javascript:;"></a>精简版</li>
+				<li><a href="javascript:;"></a>触屏版</li>
+				<li><a href="javascript:;"></a>电脑版</li>
+				<li><a href="javascript:;"></a>提建议</li>
+				<li><a href="javascript:;"></a>客&nbsp;服</li>
+				<li><a href="javascript:;"></a>帮&nbsp;助</li>
+			</ul>
+		</section>
+	</section>
+	<footer>
+		<section>
+			<a class="fl login" href="javascript:;">登录</a>
+			<a class="fl" href="javascript:;">注册</a>
+			<i class="fl"></i>
+			<a class="fr top" href="javascript:;">TOP</a>
+		</section>
+		温馨提示：本信息仅供提供演示方便链接，与原网站无关！
+	</footer>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

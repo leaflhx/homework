@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>聚划算</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+<link href="css/index.css" rel="stylesheet" />
+<style>
+
+</style>
+<script>
+var rem=100;
+window.onload=window.onresize=function()
+{
+	rem=document.documentElement.clientWidth*0.3125;
+	document.documentElement.style.fontSize=rem+'px';
+	var oUl=document.querySelector('.banner ul');
+	var aLi=oUl.children;
+	var aBanBtn=document.querySelectorAll('.banner ol li');
+	oUl.style.width=aLi[0].offsetWidth*aLi.length/100+'rem';
+	var x=0;
+	
+	oUl.addEventListener('touchstart',function(ev){
+		var disX=ev.targetTouches[0].pageX/rem-x;
+		function fnMove(ev)
+		{
+			x=ev.targetTouches[0].pageX/rem-disX;
+			oUl.style.webkitTransform='translateX('+x+'rem)';
+		}
+		function fnEnd(ev)
+		{
+			oUl.removeEventListener('touchmove',fnMove,false);
+			oUl.removeEventListener('touchend',fnEnd,false);
+			var w=aLi[0].offsetWidth/rem;
+			var n=Math.round(-x/w);
+			if(n<0)
+			{
+				n=0;
+			}
+			else if(n==aLi.length)
+			{
+				n=aLi.length-1;
+			}
+			console.log(n);
+			x=-n*w;
+			for(var i=0;i<aBanBtn.length;i++)
+			{
+				aBanBtn[i].className='';
+			}
+			aBanBtn[n].className='active';
+			oUl.style.webkitTransition='0.5s all ease';
+			oUl.style.webkitTransform='translateX('+x+'rem)';
+		}
+		oUl.addEventListener('touchmove',fnMove,false);
+		oUl.addEventListener('touchend',fnEnd,false);
+		ev.preventDefault();
+	},false);
+};
+</script>
+</head>
+<body>
+	<div class="box">
+		<header>
+			<a href="javascript:;">返回</a>
+			<h1>聚划算</h1>
+		</header>
+		<section class="banner">
+			<ul>
+				<li>
+					<a href="javascript:;">
+						<img src="images/banner.jpg" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="images/banner1.jpg" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="images/banner2.jpg" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="images/banner3.jpg" alt="" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="images/banner4.jpg" alt="" />
+					</a>
+				</li>
+			</ul>
+			<ol>
+				<li class="active">0</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ol>
+		</section>
+		<nav>
+			<ul>
+				<li>
+					<a href="javascript:;">
+						<section class="product">
+							<img src="images/1.png" alt="商品" />
+						</section>
+						<span>商品</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="life">
+							<img src="images/2.png" alt="生活" />
+						</section>
+						<span>生活</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="brands">
+							<img src="images/3.png" alt="品牌" />
+						</section>
+						<span>品牌</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="bowl">
+							<img src="images/4.png" alt="聚宝盆" />
+						</section>
+						<span>聚宝盆</span>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="javascript:;">
+						<section class="famous">
+							<img src="images/5.png" alt="聚名品" />
+						</section>
+						<span>聚名品</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="house">
+							<img src="images/6.png" alt="聚家装" />
+						</section>
+						<span>聚家装</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="jutou">
+							<img src="images/7.png" alt="聚透" />
+						</section>
+						<span>聚透</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="client">
+							<img src="images/8.png" alt="客户端" />
+						</section>
+						<span>客户端</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<section class="hot">
+			<section class="clearFix">
+				<i class="fl"></i>
+				<h2 class="fl">聚划算热卖排行</h2>
+				<span class="fr">TOP10</span>
+			</section>
+			<section class="line"></section>
+			<ul>
+				<li>
+					<a href="javascript:;">
+						<section class="fl one num">1</section>
+						<img class="fl" src="images/1.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl two num">2</section>
+						<img class="fl" src="images/2.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl three num">3</section>
+						<img class="fl" src="images/3.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl four num">4</section>
+						<img class="fl" src="images/4.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl five num">5</section>
+						<img class="fl" src="images/5.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl six num">6</section>
+						<img class="fl" src="images/6.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl seven num">7</section>
+						<img class="fl" src="images/7.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl eight num">8</section>
+						<img class="fl" src="images/8.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl nine num">9</section>
+						<img class="fl" src="images/9.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<section class="fl ten num">10</section>
+						<img class="fl" src="images/10.jpg" alt="" />
+						<section class="fl sale clearFix">
+							<section class="fl sale_l">
+								<p>已售68423</p>
+								<p>2.3折&nbsp;&nbsp;&yen;<b>299</b></p>
+							</section>
+							<section class="fr sale_r">
+								<strong>&yen;51</strong>
+								<b></b>
+							</section>
+						</section>
+					</a>
+				</li>
+			</ul>
+			<section class="more">更多划算&nbsp;逛起来！</section>
+		</section>
+		<section class="sptuan listbox clearFix">
+			<img src="images/shangpin.png" alt="商品团" />
+			<ul class="fl clearFix">
+				<li class="active">
+					<a href="javascript:;">服饰</a>
+				</li>
+				<li>
+					<a href="javascript:;">配饰</a>
+				</li>
+				<li>
+					<a href="javascript:;">美妆</a>
+				</li>
+				<li>
+					<a href="javascript:;">鞋包</a>
+				</li>
+				<li>
+					<a href="javascript:;">食品</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">家居</a>
+				</li>
+				<li>
+					<a href="javascript:;">运动</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">电器</a>
+				</li>
+				<li>
+					<a href="javascript:;">百货</a>
+				</li>
+				<li>
+					<a href="javascript:;">母婴</a>
+				</li>
+				<li>
+					<a href="javascript:;">数码</a>
+				</li>
+				<li>
+					<a href="javascript:;">更多</a>
+				</li>
+			</ul>
+		</section>
+		<section class="more">精彩商品&nbsp;逛起来！</section>
+		<section class="shtuan listbox clearFix">
+			<img src="images/shenghuo.png" alt="商品团" />
+			<ul class="fl clearFix">
+				<li class="active">
+					<a href="javascript:;">美食</a>
+				</li>
+				<li>
+					<a href="javascript:;">教育</a>
+				</li>
+				<li>
+					<a href="javascript:;">酒店</a>
+				</li>
+				<li>
+					<a href="javascript:;">电影</a>
+				</li>
+				<li>
+					<a href="javascript:;">生活服务</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">卡券</a>
+				</li>
+				<li>
+					<a href="javascript:;">摄影</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">粮油生鲜</a>
+				</li>
+				<li>
+					<a href="javascript:;">门票</a>
+				</li>
+				<li>
+					<a href="javascript:;">休闲娱乐</a>
+				</li>
+				<li>
+					<a href="javascript:;"></a>
+				</li>
+				<li>
+					<a href="javascript:;"></a>
+				</li>
+			</ul>
+		</section>
+		<section class="more">品质生活&nbsp;逛起来！</section>
+		<section class="pptuan listbox clearFix">
+			<img src="images/pinpai.png" alt="商品团" />
+			<ul class="fl clearFix">
+				<li class="active">
+					<a href="javascript:;">七匹狼</a>
+				</li>
+				<li>
+					<a href="javascript:;">粉红女...</a>
+				</li>
+				<li>
+					<a href="javascript:;">卓诗尼</a>
+				</li>
+				<li>
+					<a href="javascript:;">收纳博士</a>
+				</li>
+				<li>
+					<a href="javascript:;">惠氏</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">夏乐</a>
+				</li>
+				<li>
+					<a href="javascript:;">帕克伦</a>
+				</li>
+				<li class="active">
+					<a href="javascript:;">古今</a>
+				</li>
+				<li>
+					<a href="javascript:;">九牧</a>
+				</li>
+				<li>
+					<a href="javascript:;">诺奥</a>
+				</li>
+				<li>
+					<a href="javascript:;">红豆</a>
+				</li>
+				<li>
+					<a href="javascript:;">曼秀雷敦</a>
+				</li>
+			</ul>
+		</section>
+		<section class="more">品牌折扣&nbsp;逛起来！</section>
+		<section class="dowload">
+			<ul class"clearFix">
+				<li>
+					<a href="javascript:;">
+						<img class="apple" src="images/apple.png" alt="ISO客户端" />
+						<p>ISO客户端</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img class="Android" src="images/Android.png" alt="安卓客户端" />
+						<p>安卓客户端</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img class="opinion" src="images/opinion.png" alt="意见反馈" />
+						<p>意见反馈</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<footer>
+			<section class="clearFix">
+				<a class="fl login" href="javascript:;">登录</a>
+				<a class="fl" href="javascript:;">注册</a>
+				<a class="fr top" href="javascript:;"><span>TOP</span><i></i></a>
+			</section>
+			<section class="footer">
+				<p>
+					<a href="javascript:;">标准版</a>
+					<a href="javascript:;">电脑版</a>
+				</p>
+				<p>©2013 浙B2-20080224   服务中心</p>
+			</section>
+		</footer>
+	</div>
+</body>
+</html>

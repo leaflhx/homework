@@ -1,0 +1,106 @@
+@charset "utf-8";
+*{ margin:0; padding:0; list-style:none; text-decoration:none; }
+html{ font-size:100px; }
+.box{ width:100%; font-family:"Microsoft YaHei"; }
+.fl{ float:left; }
+.fr{ float:right; }
+.clearFix:after{ content:''; display:block; clear:both; }
+header{ width:100%; height:0.35rem; background:-webkit-linear-gradient(#fff,#ebebeb); position:relative; top:0;left:0; padding-top:0.15rem; }
+header a{ text-indent:-999999px; background:url(../images/back.png) no-repeat; background-size:100%; width:0.65rem; height:0.32rem; position:absolute; top:50%; left:0.1rem; margin-top:-0.16rem; }
+h1{ width:0.74rem; height:0.195rem; text-indent:-999999px; background:url(../images/logo.png) no-repeat; margin:0 auto; background-size:100%; }
+.banner{ width:100%; height:1.49rem; position:relative; top:0; left:0; overflow:hidden; }
+.banner ul{ position:absolute; top:0; left:0; }
+.banner ul li{ width:3.2rem; height:1.34rem; float:left; }
+.banner ul li img{ width:3.2rem; height:1.34rem; }
+.banner ol{ width:0.5rem; position:absolute; bottom:0; left:50%; margin-left:-0.25rem; }
+.banner ol li{ text-indent:-999999px; width:0.05rem; height:0.05rem; background:#a9a9a9; border-radius:50%; float:left; margin:0 0.025rem; }
+.banner ol li.active{ background:#ff4300; }
+nav{ font-size:0.12rem; }
+nav span{ color:#999; }
+nav ul{ display:-webkit-flex; display:flex; width:3.04rem; margin:0.2rem auto 0; }
+nav li{ -webkit-flex:1; flex:1; text-align:center; margin:0 0.18rem; }
+nav li section{ margin-bottom:0.08rem; border-radius:50%; width:0.4rem; height:0.4rem; }
+.product{ background:#da3809;  }
+.product img{ width:0.16rem; height:0.145rem; margin-top:0.13rem; }
+.life{ background:#18a78c; }
+.life img{ width:0.19rem; height:0.195rem; margin-top:0.085rem; }
+.brands{ background:#000; }
+.brands img{ width:0.18rem; height:0.18rem; margin-top:0.11rem; }
+.bowl{ background:#ff529d; }
+.bowl img{ width:0.16rem; height:0.16rem; margin-top:0.12rem; }
+.famous{ background:#cfa871; }
+.famous img{ width:0.17rem; height:0.12rem; margin-top:0.14rem; }
+.house{ background:#ffb021; }
+.house img{ width:0.165rem; height:0.165rem; margin-top:0.13rem; }
+.jutou{ background:#a1c36f; }
+.jutou img{ width:0.115rem; height:0.17rem; margin-top:0.11rem; }
+.client{ background:#f5493c; }
+.client img{ width:0.12rem; height:0.16rem; margin-top:0.12rem; }
+.hot i{ width:0.02rem; height:0.15rem; float:left; background:#d51938; margin-right:0.085rem; }
+.hot h2{ color:#333; font-size:0.14rem; font-weight:normal; }
+.hot{ margin:0.32rem auto 0; width:3rem; font-size:0.14rem; line-height:0.14rem; }
+.line{ width:100%; height:0.02rem; background:#dcdcdc; margin:0.1rem 0 0.155rem; }
+.hot ul li{ width:100%; height:0.6rem; margin-bottom:0.1rem; }
+.num{ width:0.3rem; height:0.6rem; font-size:0.24rem; color:#fff; line-height:0.6rem; text-align:center; font-weight:bold; }
+.one{ background:#e00202; }
+.two{ background:#ff4800; }
+.three{ background:#ff7300; }
+.four{ background:#ff9d00; }
+.five{ background:#ffa800; }
+.six{ background:#ffb400; }
+.seven{ background:#ffba00; }
+.eight{ background:#fcd000; }
+.nine{ background:#ffd719; }
+.ten{ background:#ffd719; }
+.hot ul li img{ width:0.9rem; height:0.6rem; }
+.sale{ width:1.8rem; height:100%; background:#f4f4f4; }
+.sale .sale_l{ margin:0.125rem 0 0 0.1rem; }
+.sale .sale_l p{ color:#999; font-size:0.12rem; line-height:0.18rem; }
+.sale .sale_l b{ font-weight:normal; text-decoration:line-through; }
+.sale .sale_r strong{ color:#d51938; font-size:0.16rem; line-height:0.6rem; }
+.sale .sale_r b{ width:0.065rem; height:0.11rem; display:inline-block; background:url(../images/arrow.png) no-repeat; background-size:100%; margin:0 0.1rem 0 0.09rem; }
+.more{ background:#f5f5f5; width:3rem; margin:0 auto; height:0.4rem; text-align:center; line-height:0.4rem; color:#666; font-size:0.14rem; }
+.listbox{ width:3rem; margin:0 auto 0.1rem; height:1.76rem; font-size:0.14rem; margin-top:0.1rem; }
+.listbox a{ color:#999; display:block; width:100%; height:100%;  }
+.listbox img{ height:1.76rem; width:0.75rem; float:left; }
+.listbox ul{ width:2.25rem; box-sizing:border-box; border-top:1px solid #eee; border-left:1px solid #eee; }
+.listbox ul li{ width:0.746rem; height:0.44rem; float:left; border-right:1px solid #eee; border-bottom:1px solid #eee; box-sizing:border-box; text-align:center; line-height:0.435rem; }
+.listbox ul li.active a{ color:#d51942; }
+.dowload{ width:3rem; height:0.8rem; margin:0.16rem auto;  font-size:0.12rem; }
+.dowload ul{ height:0.8rem; display:-webkit-flex; display:flex; }
+.dowload ul li{ width:0.996rem; height:0.8rem; border:1px solid #dcdcdc; box-sizing:border-box; text-align:center; flex:1; -webkit-flex:1; margin-left:-1px; }
+.dowload ul li a{ color:#999; }
+.apple{ width:0.19rem; height:0.22rem; margin:0.15rem 0 0.13rem; }
+.Android{ width:0.185rem; height:0.21rem; margin:0.15rem 0 0.13rem; }
+.opinion{ width:0.19rem; height:0.17rem; margin:0.15rem 0 0.13rem; }
+footer{ width:100%; font-size:0.14rem; height:0.44rem; background:#f8f8f8; line-height:0.44rem; }
+footer a{ color:#333; }
+footer .login{ margin:0 0.235rem 0 0.15rem; }
+footer .top{ margin-right:0.14rem; }
+footer .top i{ display:inline-block; width:0; height:0; border:0.045rem solid #f8f8f8; border-bottom:0.045rem solid #999; margin:0 0 0.02rem 0.1rem; }
+.footer{ width:100%; height:0.65rem; background:#eee; text-align:center; color:#999; font-size:0.11rem; line-height:0.26rem; padding-top:0.15rem; }
+.footer a{ color:#333; font-size:0.14rem; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{}

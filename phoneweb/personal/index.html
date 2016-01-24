@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>个人中心</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<link href="css/index.css" rel="stylesheet" />
+<script>
+var rem=50;
+window.onload=function()
+{
+	rem=document.documentElement.clientWidth*0.15625;
+	document.documentElement.style.fontSize=rem+'px';
+	window.onresize=function()
+	{
+		rem=document.documentElement.clientWidth*0.15625;
+		document.documentElement.style.fontSize=rem+'px';
+	};
+};	
+</script>
+</head>
+<body>
+<div class="box">
+	<header>
+		<a href="javascript:;">
+			<i class="fl"></i>
+			<span class="fl">返回</span>
+		</a>
+		<h1>个人中心</h1>
+	</header>
+	<section class="banner">
+		<img src="images/1.jpg" alt="" />
+	</section>
+	<nav>
+		<ul>
+			<li>
+				<a class="clearFix order" href="javascript:;">
+					<i class="fl"></i>
+					<span class="fl">订单</span>
+				</a>
+			</li>
+			<li>
+				<a class="clearFix hreat" href="javascript:;">
+					<i class="fl"></i>
+					<span class="fl">收藏</span>
+				</a>
+			</li>
+			<li>
+				<a class="clearFix zan" href="javascript:;">
+					<i class="fl"></i>
+					<span class="fl">推荐</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<section class="change">
+		<ul>
+			<li>
+				<a href="javascript:;">
+					<span class="fl">修改个人资料</span>
+					<i class="fr"></i>
+				</a>
+			</li>
+			<li class="bordernone">
+				<a href="javascript:;">
+					<span class="fl">修改密码</span>
+					<i class="fr"></i>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="voice">
+		<a href="javascript:;">
+			<span class="fl">声音推送通知</span>
+			<section class="fr">
+				<i></i>
+			</section>
+		</a>
+	</section>
+	<section class="change">
+		<ul>
+			<li>
+				<a href="javascript:;">
+					<span class="fl">猜你喜欢</span>
+					<i class="fr"></i>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<span class="fl">附近热门</span>
+					<i class="fr"></i>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<span class="fl">推荐商家</span>
+					<i class="fr"></i>
+				</a>
+			</li>
+			<li class="bordernone">
+				<a href="javascript:;">
+					<span class="fl">设置</span>
+					<i class="fr"></i>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<footer>
+		<ul>
+			<li class="home">
+				<a href="javascript:;">
+					<img src="images/home.png" alt="首页" />
+					<p>首页</p>
+				</a>
+			</li>
+			<li class="store">
+				<a href="javascript:;">
+					<img src="images/store.png" alt="商家" />
+					<p>商家</p>
+				</a>
+			</li>
+			<li class="car">
+				<a href="javascript:;">
+					<img src="images/car.png" alt="购物车" />
+					<p>购物车</p>
+				</a>
+			</li>
+			<li class="user">
+				<a href="javascript:;">
+					<img src="images/user.png" alt="个人中心" />
+					<p>个人中心</p>
+					<section class="pos">1</section>
+				</a>
+			</li>
+		</ul>
+	</footer>
+</div>
+</body>
+</html>

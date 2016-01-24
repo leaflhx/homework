@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>驱动之家</title>
+<link href="css/index.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<script>
+
+var rem=50;
+window.onload=function()
+{
+	rem=document.documentElement.clientWidth*0.15625;
+	document.documentElement.style.fontSize=rem+'px';
+	var x=0;
+	var oUl=document.querySelector('.banner ul');
+	var aLi=oUl.children;
+	var aBanBtn=document.querySelectorAll('.banner ol li');
+	oUl.addEventListener('touchstart',function(ev){
+		var disX=ev.targetTouches[0].pageX/rem-x;
+		function fnMove(ev)
+		{
+			x=ev.targetTouches[0].pageX/rem-disX;
+			oUl.style.WebkitTransform='translateX('+x+'rem)';
+		}
+		function fnEnd()
+		{
+			oUl.removeEventListener('touchmove',fnMove,false);
+			oUl.removeEventListener('touchend',fnEnd,false);
+			var w=aLi[0].offsetWidth/rem;
+			var n=Math.round(-x/w);
+			document.title=n;
+			oUl.style.WebkitTransition='0.5s all ease';
+			if(n<0)
+			{
+				n=0;
+			}
+			else if(n==aLi.length)
+			{
+				n=aLi.length-1;
+			}
+			x=-n*w;
+			for(var i=0;i<aBanBtn.length;i++)
+			{
+				aBanBtn[i].className='';
+			}
+			
+			aBanBtn[n].className='active';
+			oUl.style.WebkitTransform='translateX('+x+'rem)';
+		}
+		oUl.addEventListener('touchmove',fnMove,false);
+		oUl.addEventListener('touchend',fnEnd,false);
+
+		ev.preventDefault();
+	},false);
+
+	window.onresize=function()
+	{
+		rem=document.documentElement.clientWidth*0.15625;
+		document.documentElement.style.fontSize=rem+'px';
+	};
+};
+</script>
+</head>
+<body>
+<div class="box">
+	<header class="clearFix">
+		<h1 class="fl">驱动之家</h1>
+		<a class="fr" href="javascript:;">传统版</a>
+	</header>
+	<nav>
+		<ul>
+			<li>
+				<a class="active" href="javascript:;">全部</a>
+			</li>
+			<li>
+				<a href="javascript:;">硬件</a>
+			</li>
+			<li>
+				<a href="javascript:;">软件</a>
+			</li>
+			<li>
+				<a href="javascript:;">手机</a>
+			</li>
+			<li>
+				<a href="javascript:;">科技</a>
+			</li>
+		</ul>
+	</nav>
+	<section class="banner">
+		<ul>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner2.jpg" alt="" />
+				</a>
+			</li>
+			<li>
+				<a href="javascript:;">
+					<img src="images/banner3.jpg" alt="" />
+				</a>
+			</li>
+		</ul>
+		<section class="pos">如此逆天的Android平板你知道吗？</section>
+		<ol>
+			<li class="active">0</li>
+			<li>1</li>
+			<li>2</li>
+		</ol>
+	</section>
+	<section class="newslist">
+		<ul>
+			<li>
+				<h2>
+					<a href="javascript:;">金发美女+比基尼在零重力下的诱惑</a>
+				</h2>
+				<section class="clearFix uesr">
+					<a class="fl name" href="javascript:;">萧萧</a>
+					<span class="fl">|</span>
+					<em class="fl">5分钟前</em>
+					<a class="fr discuss clearFix" href="javascript:;">
+						<b class="fl">2</b>
+						<i class="fl"></i>
+					</a>
+				</section>
+			</li>
+			<li>
+				<h2>
+					<a href="javascript:;">三星入门4G手机续航测试：秒掉Nexus 5</a>
+				</h2>
+				<section class="clearFix uesr">
+					<a class="fl name" href="javascript:;">小呆</a>
+					<span class="fl">|</span>
+					<em class="fl">2小时前</em>
+					<a class="fr discuss clearFix" href="javascript:;">
+						<b class="fl">16</b>
+						<i class="fl"></i>
+					</a>
+				</section>
+			</li>
+			<li>
+				<h2>
+					<a href="javascript:;">PSV版《生化奇兵》到底还有木有了？</a>
+				</h2>
+				<section class="clearFix uesr">
+					<a class="fl name" href="javascript:;">黄栋</a>
+					<span class="fl">|</span>
+					<em class="fl">2小时前</em>
+					<a class="fr discuss clearFix" href="javascript:;">
+						<b class="fl">6</b>
+						<i class="fl"></i>
+					</a>
+				</section>
+			</li>
+			<li>
+				<h2>
+					<a href="javascript:;">苏宁架构大调：设八大直属独立公司</a>
+				</h2>
+				<section class="clearFix uesr">
+					<a class="fl name" href="javascript:;">小路</a>
+					<span class="fl">|</span>
+					<em class="fl">2小时前</em>
+					<a class="fr discuss clearFix" href="javascript:;">
+						<b class="fl">5</b>
+						<i class="fl"></i>
+					</a>
+				</section>
+			</li>
+			<li class="active">
+				<h2>
+					<a href="javascript:;">百度薅羊毛继续：一分钱换迅雷白金会 员</a>
+				</h2>
+				<section class="clearFix uesr">
+					<a class="fl name" href="javascript:;">鲲鹏</a>
+					<span class="fl">|</span>
+					<em class="fl">3小时前</em>
+					<a class="fr discuss clearFix" href="javascript:;">
+						<b class="fl">21</b>
+						<i class="fl"></i>
+					</a>
+				</section>
+			</li>
+			<li>
+				<section class="piclist">
+					<a href="javascript:;">
+						<img src="images/1.jpg" alt="" />
+						<p>触目惊心  揭秘iPhone翻新全过程</p>
+					</a>
+					<a href="javascript:;">
+						<img src="images/2.jpg" alt="" />
+						<p>东芝消费级5TB硬盘突然上市，真便宜</p>
+					</a>
+				</section>
+				<h2>
+					<a href="javascript:;">真正有生命的鞋子：活体细胞合成材料 制成</a>
+				</h2>
+				<section class="clearFix uesr">
+					<a class="fl name" href="javascript:;">萧萧</a>
+					<span class="fl">|</span>
+					<em class="fl">5小时前</em>
+					<a class="fr discuss clearFix" href="javascript:;">
+						<b class="fl">12</b>
+						<i class="fl"></i>
+					</a>
+				</section>
+			</li>
+			<li>
+				<h2>
+					<a href="javascript:;">做工如何？神州899元5寸四核机大拆解</a>
+				</h2>
+				<section class="clearFix uesr">
+					<a class="fl name" href="javascript:;">雪花</a>
+					<span class="fl">|</span>
+					<em class="fl">5小时前</em>
+					<a class="fr discuss clearFix" href="javascript:;">
+						<b class="fl">19</b>
+						<i class="fl"></i>
+					</a>
+				</section>
+			</li>
+		</ul>
+		<section class="next">
+			<a href="javascript:;">【下一页】</a>
+		</section>
+	</section>
+	<footer>
+		<ul>
+			<li>
+				<a href="javascript:;">pad版</a>
+				|
+			</li>
+			<li>
+				<a href="javascript:;">触屏版</a>
+				|
+			</li>
+			<li>
+				<a href="javascript:;">传统版</a>
+			</li>
+		</ul>
+		<p>京ICP配备 11024344浩-7 驱动之家 京公安网</p>
+	</footer>
+</div>
+</body>
+</html>
